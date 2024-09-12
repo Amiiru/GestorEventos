@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Lista de Eventos</title>
+</head>
+<body>
+    <h1>Lista de Eventos</h1>
+    <p>{{ user.username }}</p>
+    <p><a href="{% url 'logout' %}">Cerrar sesión</a></p>
+    <ul>
+        {% for evento in eventos %}
+            <li>
+                <strong>{{ evento.titulo }}</strong> - {{ evento.fecha }}<br>
+                Organizado por: {{ evento.organizador.nombre }} ({{ evento.organizador.email }})
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+
